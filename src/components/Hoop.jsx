@@ -60,7 +60,7 @@ export const Hoop = ({ ringRef }) => {
         onIntersectionExit={(event) => {
           if (
             event.other.rigidBodyObject.name === 'ball' &&
-            event.other.rigidBodyObject.position.y <= SETTINGS.ringPosition.y - .15
+            event.other.rigidBodyObject.position.y <= SETTINGS.ringPosition.y - 0.15
           ) {
             const ballId = event.other.rigidBodyObject.ballId;
 

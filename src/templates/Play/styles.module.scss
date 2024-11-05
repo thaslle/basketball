@@ -30,14 +30,6 @@
       text-transform: uppercase;
       line-height: 1em;
       padding: 0.6em 1em;
-      // border-radius: 1em;
-      // color: var(--button-background);
-      // background: #ff611f;
-      // background: linear-gradient(15deg, #ff611f 0%, #ffa61f 100%);
-      // text-shadow: 1px -1px rgba(0, 0, 0, 0.2);
-      // border: 2px var(--button-border) solid;
-      // box-shadow: inset 1px 1px 2px rgba(255,166,31,0.5),
-      //             0 4px 0 var(--button-border);
       border-radius: 0.6em;
       color: var(--button-background);
       background: #ff00f8;
@@ -49,17 +41,6 @@
       z-index: 2;
   
       transition: all var(--transition-time) var(--transition-ease);
-    }
-    .arrow {
-      width: clamp(32px, 15vw, 90px);
-      aspect-ratio: 1;
-      perspective: 4rem;
-
-      svg {
-        width: 100%;
-        height: auto;
-        transform: rotateX(15deg);
-      }
     }
     .ball {
       position: absolute;

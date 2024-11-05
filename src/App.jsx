@@ -2,7 +2,6 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Physics } from '@react-three/rapier';
-// import { Stats } from '@react-three/drei';
 import { Experience } from './components/Experience';
 import { GameControl } from './templates/GameControl/';
 import { AudioControl } from './templates/AudioControl';
@@ -43,7 +42,6 @@ const App = () => {
           <Physics>
             <Experience />
           </Physics>
-          {/* <Stats /> */}
         </Canvas>
         <GameControl />
         <AudioControl />

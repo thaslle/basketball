@@ -189,7 +189,7 @@ export const Net = ({ heightSegments = 3, radialSegments = 6, baseRadius = 0.5 }
           position={[pos.x, pos.y, pos.z]}
           name="net"
           collisionFilterGroup={SETTINGS.groupKnots}
-          collisionFilterMask={SETTINGS.groupBalls} 
+          collisionFilterMask={SETTINGS.groupBalls}
           onCollisionEnter={(event) => {
             if (event.rigidBody) {
               const currentLinvel = event.rigidBody.linvel();

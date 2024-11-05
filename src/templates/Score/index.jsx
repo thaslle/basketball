@@ -14,7 +14,7 @@ export const Score = ({ restartGame, makes, totalShots, remainingTime }) => {
       break;
 
     case makes === 10:
-      message = ['Hey, are you Curry?', 'You’re unstoppable!'];
+      message = ['Hey, are you Curry?', 'Curry, is that you?'];
       break;
 
     case makes < 10 && makes >= 8:
