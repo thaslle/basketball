@@ -189,6 +189,8 @@ export const Ball = forwardRef(({ ringRef, initialPosition, ballId, material }, 
       ref={ballRef}
       name="ball"
       ballId={ballId}
+      collisionFilterGroup={SETTINGS.groupBalls}
+      collisionFilterMask={0b1111}
       onCollisionEnter={(event) => {
         let audio = null;
         switch (event.other.rigidBodyObject.name) {

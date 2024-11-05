@@ -5,6 +5,7 @@ import { RigidBody, useRopeJoint } from '@react-three/rapier';
 import { shaderMaterial, Sphere } from '@react-three/drei';
 import { extend, useFrame } from '@react-three/fiber';
 import { Vector3 } from 'three';
+import { SETTINGS } from '../config/config';
 
 // Helper to generate positions for each joint
 const generateNet = (heightSegments, radialSegments, baseRadius) => {
@@ -187,6 +188,8 @@ export const Net = ({ heightSegments = 3, radialSegments = 6, baseRadius = 0.5 }
           type={i < radialSegments ? 'kinematicPosition' : 'dynamic'}
           position={[pos.x, pos.y, pos.z]}
           name="net"
+          collisionFilterGroup={SETTINGS.groupKnots}
+          collisionFilterMask={SETTINGS.groupBalls} 
           onCollisionEnter={(event) => {
             if (event.rigidBody) {
               const currentLinvel = event.rigidBody.linvel();
