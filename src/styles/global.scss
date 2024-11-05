@@ -1,0 +1,58 @@
+body,
+canvas {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: 'Lilita One';
+  src:
+    url('/fonts/lilitaone-regular.woff2') format('woff2'),
+    url('/fonts/lilitaone-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Minecart LCD';
+  src:
+    url('/fonts/minecart-lcd.woff2') format('woff2'),
+    url('/fonts/minecart-lcd.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  --bg-color: #fff;
+  --font-color: #2b363b;
+  --button-background: #fff9ec;
+  --button-border: #3d5561;
+  // --button-text: #92bf06;
+  --button-text: #4f6773;
+
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-time: 0.15s;
+}
+
+html {
+  font-size: 16px;
+}
+body {
+  font-family: 'Lilita One', Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--font-color);
+  background-color: #79f2eb ;
+}
+
+/*a {
+    cursor: var(--cursor-pointer);
+}
+a:active {
+    transform: translate(1px,1px);
+}*/

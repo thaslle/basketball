@@ -1,0 +1,26 @@
+.button {
+  all: unset;
+  pointer-events: visible;
+  font-family: 'Lilita One', Arial, Helvetica, sans-serif;
+  line-height: 1em;
+  padding: 0.5em 1em;
+  //border-radius: 1em;
+  // color: var(--button-text);
+  // background-color: var(--button-background);
+  // border: 2px var(--button-border) solid;
+  // box-shadow: 0 4px 0 var(--button-border);
+  border-radius: 0.6em;
+  color: var(--button-border);
+  background-image: linear-gradient(15deg, rgba(251, 255, 255, .95) 0%, rgba(251, 251, 251, .75) 100%);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 2px #fff, 0 4px 0 rgba(255, 247, 236, .5);
+  width: max-content;
+  justify-self: end;
+  pointer-events: visible;
+
+  transition: all var(--transition-time) var(--transition-ease);
+
+  &:active {
+    transform: translate(0, 2px);
+  }
+}
