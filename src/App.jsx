@@ -5,7 +5,7 @@ import { Physics } from '@react-three/rapier';
 // import { Stats } from '@react-three/drei';
 import { Experience } from './components/Experience';
 import { GameControl } from './templates/GameControl/';
-import { AudioControl } from './templates/audioControl';
+import { AudioControl } from './templates/AudioControl';
 
 import { SETTINGS } from './config/config';
 import { Loading } from './templates/Loading';
