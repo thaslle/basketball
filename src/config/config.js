@@ -9,4 +9,6 @@ export const SETTINGS = {
   cameraMinDistance: 3,
   cameraDistance: 7,
   cameraPos: { x: 0, y: 7, z: 20 },
+  groupKnots: 0b0001,
+  groupBalls: 0b0010,
 };
