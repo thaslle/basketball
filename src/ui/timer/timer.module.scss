@@ -1,0 +1,19 @@
+.timer {
+  margin-block: 0px;
+  text-align: center;
+  font-family: var(--led-font-family);
+  font-size: 2rem;
+  transform: translateX(0.3rem); // For some reason, this font is misaligned
+
+  width: min-content;
+  justify-self: center;
+  color: var(--led-main-color);
+  background: var(--led-main-color);
+  background-image: linear-gradient(
+    -15deg,
+    var(--led-main-color) 0%,
+    var(--led-shade-color)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

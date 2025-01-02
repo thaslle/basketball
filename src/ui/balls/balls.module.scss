@@ -1,0 +1,70 @@
+@use '~/css/helpers' as *;
+
+.balls {
+  display: flex;
+
+  li {
+    width: 1rem;
+    max-width: 3vw;
+    height: 1.2em;
+
+    &:nth-child(2) > span > span {
+      transform: rotate(115deg);
+    }
+    &:nth-child(3) > span > span {
+      transform: rotate(-15deg);
+    }
+    &:nth-child(4) > span > span {
+      transform: rotate(27deg);
+    }
+    &:nth-child(6) > span > span {
+      transform: rotate(60deg);
+    }
+    &:nth-child(7) > span > span {
+      transform: rotate(120deg);
+    }
+    &:nth-child(8) > span > span {
+      transform: rotate(175deg);
+    }
+    &:nth-child(9) > span > span {
+      transform: rotate(234deg);
+    }
+    &:nth-child(10) > span > span {
+      transform: rotate(300deg);
+    }
+
+    & > span {
+      @include ball;
+      height: 100%;
+      border-radius: 100%;
+
+      border: 0.15em solid rgba(255, 249, 236, 0.7);
+      animation: 0.4s cubic-bezier(1, 0.01, 0.58, 1) 0s forwards 1 normal
+        ballPop;
+
+      & > span {
+        position: relative;
+        display: block;
+        height: 100%;
+        aspect-ratio: 1;
+
+        @include ball-image;
+      }
+    }
+  }
+
+  @keyframes ballPop {
+    0% {
+      transform: scale(0);
+      filter: brightness(1);
+    }
+    90% {
+      transform: scale(1.8);
+      filter: brightness(5);
+    }
+    100% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+  }
+}

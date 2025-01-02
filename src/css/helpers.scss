@@ -1,0 +1,141 @@
+@mixin ui {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  pointer-events: visible;
+  backdrop-filter: blur(2px);
+  background-color: rgba(50, 255, 209, 0.45);
+  z-index: 999;
+}
+
+@mixin ui-show-animation {
+  animation: 0.4s cubic-bezier(0.75, -0.5, 0, 1.75) 0s forwards 1 normal uiShow;
+}
+
+@mixin ui-show-keyframes {
+  @keyframes uiShow {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@mixin ball {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  box-sizing: content-box;
+  transform-origin: center;
+  overflow: hidden;
+  z-index: 1;
+
+  &:after,
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    z-index: 2;
+  }
+
+  &:after {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 100%;
+    box-shadow:
+      inset 0.01em 0.01em 0.2em rgba(255, 235, 95, 0.9),
+      inset 0.1em -0.1em 0.2em rgba(151, 5, 5, 0.8);
+  }
+  &:before {
+    width: 80%;
+    height: 80%;
+    right: -20%;
+    top: -20%;
+    background-image: radial-gradient(
+      circle,
+      rgba(255, 250, 196, 0.7) 0%,
+      rgba(255, 250, 196, 0) 80%
+    );
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin ball-image {
+  border-radius: 100%;
+  background-color: orange;
+  background-image: url(/images/score-ball.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin button-light(
+  $font-size: 1.4rem,
+  $line-height: 1em,
+  $padding: 0.6em 1em,
+  $border-radius: 0.6em,
+  $text-transform: uppercase
+) {
+  all: unset;
+  font-size: $font-size;
+  line-height: $line-height;
+  padding: $padding;
+  border-radius: $border-radius;
+  text-transform: $text-transform;
+  font-family: var(--font-family);
+  color: var(--button-border);
+  background-image: linear-gradient(
+    15deg,
+    rgba(251, 255, 255, 0.95) 0%,
+    rgba(251, 251, 251, 0.75) 100%
+  );
+  backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 1px 2px #fff,
+    0 4px 0 rgba(255, 247, 236, 0.5);
+  width: max-content;
+
+  transition: all var(--transition-time) var(--transition-ease);
+
+  &:active {
+    transform: translate(0, 2px);
+    box-shadow:
+      inset 0 1px 2px #fff,
+      0 1px 0 rgba(255, 247, 236, 0.5);
+  }
+}
+
+@mixin highlight(
+  $font-size: 1.4rem,
+  $line-height: 1em,
+  $padding: 0.6em 1em,
+  $border-radius: 0.6em
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  padding: $padding;
+  border-radius: $border-radius;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--button-background);
+  background: #ff00f8;
+  background: linear-gradient(15deg, #ff00b1 0%, #ffa698 100%);
+  text-shadow: 1px -1px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    inset 1px 1px 2px rgba(236, 164, 255, 0.5),
+    inset -1px -1px 1px rgb(253 107 255),
+    0 4px 0 #a92ba7;
+  width: max-content;
+}

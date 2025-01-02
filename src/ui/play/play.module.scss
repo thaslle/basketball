@@ -1,0 +1,98 @@
+@use '~/css/helpers' as *;
+
+.start {
+  @include ui;
+
+  place-items: center;
+  justify-content: center;
+  align-items: end;
+  padding: 22vh 0;
+
+  .wrapper {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: center;
+
+    @include ui-show-animation;
+
+    .play {
+      @include highlight(1.4rem, 1em, 0.6em 1em, 0.6rem);
+
+      justify-self: end;
+      z-index: 2;
+    }
+    .ball {
+      position: absolute;
+      width: clamp(32px, 15vw, 90px);
+      bottom: 30vh;
+
+      animation: 1.8s ease-in-out 0s infinite normal ballUp;
+
+      &:after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: clamp(32px, 15vw, 90px);
+
+        border-radius: clamp(32px, 15vw, 90px);
+        background-image: linear-gradient(
+          15deg,
+          rgba(251, 255, 255, 0.95) 0%,
+          rgba(251, 251, 251, 0.75) 100%
+        );
+        transform-origin: center;
+
+        animation: 1.8s ease-in-out 0s infinite normal ballScale;
+      }
+    }
+  }
+
+  @include ui-show-keyframes;
+
+  @keyframes ballUp {
+    0% {
+      transform: translateY(100vh);
+    }
+    40% {
+      transform: translateY(0);
+    }
+    80% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(50vh);
+    }
+  }
+  @keyframes ballScale {
+    0% {
+      height: clamp(64px, 30vw, 350px);
+    }
+    20% {
+      height: clamp(64px, 30vw, 350px);
+    }
+    30% {
+      transform: scale(1);
+    }
+    40% {
+      height: clamp(32px, 15vw, 90px);
+      transform: scale(1.2);
+    }
+    48% {
+      transform: scale(1);
+    }
+    80% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    85% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+}

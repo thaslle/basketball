@@ -1,0 +1,126 @@
+@use '~/css/helpers' as *;
+
+.score {
+  @include ui;
+  padding: 10vw 0;
+
+  .wrapper {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+
+    .box {
+      display: flex;
+      max-width: 80vw;
+      gap: 0.8rem;
+      flex-direction: column;
+      align-items: center;
+      transform-origin: center;
+      grid-row-start: 2;
+
+      @include ui-show-animation;
+
+      h2 {
+        max-width: 90%;
+        @include highlight(2rem, 1em, 0.4em 0.8em, 0.9rem);
+      }
+
+      .results {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        justify-content: center;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          background-image: linear-gradient(
+            15deg,
+            rgba(251, 255, 255, 0.95) 0%,
+            rgba(251, 251, 251, 0.75) 100%
+          );
+          backdrop-filter: blur(10px);
+          box-shadow:
+            inset 0 1px 2px #fff,
+            0 4px 0 rgba(255, 247, 236, 0.5);
+          padding: 0.7em 1.2em;
+
+          p {
+            font-size: 2.8rem;
+            line-height: 1em;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            color: var(--button-border);
+
+            small {
+              font-size: 0.5em;
+            }
+          }
+        }
+
+        .balls {
+          border-radius: 0.9rem 0.2em 0.2em 0.9rem;
+          span {
+            @include ball;
+            @include ball-image;
+
+            width: 2rem;
+            border: 0.2em solid var(--button-background);
+          }
+        }
+
+        .time {
+          border-radius: 0.2em 0.9rem 0.9rem 0.2em;
+
+          span {
+            position: relative;
+            display: block;
+            width: 2rem;
+            aspect-ratio: 1;
+            overflow: hidden;
+            box-sizing: content-box;
+            border: 0.2em solid var(--button-background);
+
+            border-radius: 100%;
+            background-image: url(/images/score-clock.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:before {
+              display: block;
+              content: '';
+              position: absolute;
+              z-index: 2;
+
+              width: 80%;
+              height: 80%;
+              right: -20%;
+              top: -20%;
+              background-image: radial-gradient(
+                circle,
+                rgba(255, 250, 196, 0.7) 0%,
+                rgba(255, 250, 196, 0) 80%
+              );
+              background-size: 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+    }
+
+    .restart {
+      @include button-light(1.4rem, 1em, 0.6em 1em, 0.6em, uppercase);
+      grid-row-start: 3;
+    }
+  }
+
+  @include ui-show-keyframes;
+}

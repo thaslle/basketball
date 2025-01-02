@@ -1,0 +1,7 @@
+@use '~/css/helpers' as *;
+
+.button {
+  @include button-light(1rem, 1em, 0.5em 1em, 0.6em, unset);
+  justify-self: end;
+  pointer-events: visible;
+}

@@ -1,0 +1,28 @@
+.ui {
+  pointer-events: none;
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  box-sizing: border-box;
+  touch-action: none;
+
+  .top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    opacity: 0;
+    transform: translateY(-100%);
+
+    transition: all 0.4s cubic-bezier(0.75, -0.5, 0, 1.75);
+  }
+
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

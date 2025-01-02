@@ -1,0 +1,15 @@
+# Basketball Game
+
+A React Three Fiber basketball game where you can shoot some hoops, featuring real-time physics and smooth animations.
+
+You can try a live demo [here](https://thaslle-basketball.netlify.app).
+
+## Technologies
+- [Three.js](https://threejs.org/)
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+- [React Three Rapier](https://github.com/pmndrs/react-three-rapier)
+- [Drei](https://github.com/pmndrs/drei)
+- [Zustand](https://github.com/pmndrs/zustand)
+
+## License
+[MIT](LICENSE)

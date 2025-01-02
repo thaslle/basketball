@@ -1,0 +1,60 @@
+@use '~/css/helpers' as *;
+
+.loader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  pointer-events: visible;
+  padding: 10vw 0;
+  z-index: 999;
+  background-color: rgba(50, 255, 209, 0.45);
+
+  .wrapper {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    .counter {
+      position: relative;
+
+      .value,
+      &:after {
+        display: block;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        line-height: 1em;
+        padding: 0.6em 1em;
+        border-radius: 0.6em;
+        width: max-content;
+
+        transition: all var(--transition-time) var(--transition-ease);
+      }
+
+      .value {
+        @include highlight(1.4rem, 1em, 0.6em 1em, 0.6em);
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        width: auto;
+      }
+      &:after {
+        content: 'Loading';
+        color: var(--button-border);
+        background-image: linear-gradient(
+          15deg,
+          rgba(251, 255, 255, 0.95) 0%,
+          rgba(251, 251, 251, 0.75) 100%
+        );
+        backdrop-filter: blur(10px);
+        box-shadow:
+          inset 0 1px 2px #fff,
+          0 4px 0 rgba(255, 247, 236, 0.5);
+      }
+    }
+  }
+}
